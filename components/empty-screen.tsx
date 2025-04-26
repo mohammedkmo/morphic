@@ -1,22 +1,22 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: 'What is DeepSeek R1?',
-    message: 'What is DeepSeek R1?'
+    heading: 'ما هو قانون نيوتن الثالث؟',
+    message: 'ما هو قانون نيوتن الثالث؟'
   },
   {
-    heading: 'Why is Nvidia growing rapidly?',
-    message: 'Why is Nvidia growing rapidly?'
+    heading: 'كيف يحدث التمثيل الضوئي في النباتات؟',
+    message: 'كيف يحدث التمثيل الضوئي في النباتات؟'
   },
   {
-    heading: 'Tesla vs Rivian',
-    message: 'Tesla vs Rivian'
+    heading: 'ما هي العناصر الأساسية في الجدول الدوري؟',
+    message: 'ما هي العناصر الأساسية في الجدول الدوري؟'
   },
   {
-    heading: 'Summary: https://arxiv.org/pdf/2501.05707',
-    message: 'Summary: https://arxiv.org/pdf/2501.05707'
+    heading: 'لماذا يحدث تعاقب الليل والنهار؟',
+    message: 'لماذا يحدث تعاقب الليل والنهار؟'
   }
 ]
 export function EmptyScreen({
@@ -40,7 +40,7 @@ export function EmptyScreen({
                 submitMessage(message.message)
               }}
             >
-              <ArrowRight size={16} className="mr-2 text-muted-foreground" />
+              <ArrowLeft size={16} className="ml-2 text-muted-foreground" />
               {message.heading}
             </Button>
           ))}

@@ -40,9 +40,8 @@ export function SearchResults({ results }: SearchResultsProps) {
                 <div className="mt-2 flex items-center space-x-1">
                   <Avatar className="h-4 w-4">
                     <AvatarImage
-                      src={`https://www.google.com/s2/favicons?domain=${
-                        new URL(result.url).hostname
-                      }`}
+                      src={`https://www.google.com/s2/favicons?domain=${new URL(result.url).hostname
+                        }`}
                       alt={new URL(result.url).hostname}
                     />
                     <AvatarFallback>
@@ -67,7 +66,7 @@ export function SearchResults({ results }: SearchResultsProps) {
                 className="text-muted-foreground"
                 onClick={handleViewMore}
               >
-                View {additionalResultsCount} more
+                + عرض المزيد ({additionalResultsCount})
               </Button>
             </CardContent>
           </Card>

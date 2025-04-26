@@ -89,6 +89,8 @@ export function Chat({
         append={append}
         models={models}
       />
+
+
     </div>
   )
 }

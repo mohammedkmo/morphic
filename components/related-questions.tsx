@@ -3,7 +3,7 @@
 import { CHAT_ID } from '@/lib/constants'
 import { JSONValue } from 'ai'
 import { useChat } from 'ai/react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import React from 'react'
 import { CollapsibleMessage } from './collapsible-message'
 import { Section } from './section'
@@ -70,14 +70,14 @@ export const RelatedQuestions: React.FC<RelatedQuestionsProps> = ({
       showIcon={false}
       showBorder={false}
     >
-      <Section title="Related" className="pt-0 pb-8">
+      <Section title="الأسئلة المتعلقة" className="pt-0 pb-14">
         <div className="flex flex-col">
           {Array.isArray(relatedQuestions.items) ? (
             relatedQuestions.items
               ?.filter(item => item?.query !== '')
               .map((item, index) => (
                 <div className="flex items-start w-full" key={index}>
-                  <ArrowRight className="h-4 w-4 mr-2 mt-1 flex-shrink-0 text-accent-foreground/50" />
+                  <ArrowLeft className="h-4 w-4 ml-2 mt-1 flex-shrink-0 text-accent-foreground/50" />
                   <Button
                     variant="link"
                     className="flex-1 justify-start px-0 py-1 h-fit font-semibold text-accent-foreground/50 whitespace-normal text-left"

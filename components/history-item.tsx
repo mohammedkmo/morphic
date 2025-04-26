@@ -1,10 +1,10 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Chat } from '@/lib/types'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
 
 type HistoryItemProps = {
   chat: Chat
@@ -29,13 +29,13 @@ const formatDateWithTime = (date: Date | string) => {
     parsedDate.getMonth() === now.getMonth() &&
     parsedDate.getFullYear() === now.getFullYear()
   ) {
-    return `Today, ${formatTime(parsedDate)}`
+    return `اليوم، ${formatTime(parsedDate)}`
   } else if (
     parsedDate.getDate() === yesterday.getDate() &&
     parsedDate.getMonth() === yesterday.getMonth() &&
     parsedDate.getFullYear() === yesterday.getFullYear()
   ) {
-    return `Yesterday, ${formatTime(parsedDate)}`
+    return `أمس، ${formatTime(parsedDate)}`
   } else {
     return parsedDate.toLocaleString('en-US', {
       year: 'numeric',

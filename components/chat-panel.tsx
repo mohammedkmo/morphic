@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import Textarea from 'react-textarea-autosize'
 import { EmptyScreen } from './empty-screen'
-import { ModelSelector } from './model-selector'
 import { SearchModeToggle } from './search-mode-toggle'
 import { Button } from './ui/button'
 import { IconLogo } from './ui/icons'
@@ -98,9 +97,9 @@ export function ChatPanel({
     >
       {messages.length === 0 && (
         <div className="mb-10 flex flex-col items-center gap-4">
-          <IconLogo className="size-12 text-muted-foreground" />
+          <IconLogo className="size-20 text-primary" />
           <p className="text-center text-3xl font-semibold">
-            How can I help you today?
+            ما الذي تبحث عنه؟
           </p>
         </div>
       )}
@@ -120,7 +119,7 @@ export function ChatPanel({
             tabIndex={0}
             onCompositionStart={handleCompositionStart}
             onCompositionEnd={handleCompositionEnd}
-            placeholder="Ask a question..."
+            placeholder="اكتب الذي بحث عنه؟"
             spellCheck={false}
             value={input}
             disabled={isLoading || isToolInvocationInProgress()}
@@ -152,7 +151,7 @@ export function ChatPanel({
           {/* Bottom menu area */}
           <div className="flex items-center justify-between p-3">
             <div className="flex items-center gap-2">
-              <ModelSelector models={models || []} />
+              {/* <ModelSelector models={models || []} /> */}
               <SearchModeToggle />
             </div>
             <div className="flex items-center gap-2">
@@ -185,6 +184,7 @@ export function ChatPanel({
           </div>
         </div>
 
+
         {messages.length === 0 && (
           <EmptyScreen
             submitMessage={message => {
@@ -196,6 +196,13 @@ export function ChatPanel({
           />
         )}
       </form>
+
+      {/* Project created by Teacher Saba Abdulazeez Sabti */}
+      <div className='text-center text-xs text-muted-foreground mb-4'>
+        <p>تم تصميم هذا التطبيق من قبل المدرسة صبا عبد العزيز سبتي</p>
+        <p>ثانوية المتميزات</p>
+      </div>
+
     </div>
   )
 }

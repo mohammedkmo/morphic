@@ -1,23 +1,21 @@
-import Footer from '@/components/footer'
 import Header from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata, Viewport } from 'next'
-import { Inter as FontSans } from 'next/font/google'
+import { IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
 
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans'
+const fontArabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  weight: ['400', '500', '700'],
+  variable: '--font-arabic'
 })
 
-const title = 'Morphic'
+const title = 'المساعد البحثي'
 const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+  'مساعد بحثي يساعدك في البحث عن المعلومات التي تحتاجها'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://morphic.sh'),
   title,
   description,
   openGraph: {
@@ -28,7 +26,7 @@ export const metadata: Metadata = {
     title,
     description,
     card: 'summary_large_image',
-    creator: '@miiura'
+    creator: '@Saba'
   }
 }
 
@@ -45,19 +43,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn('font-sans antialiased', fontSans.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <body className={cn('antialiased', fontArabic.className)}>
+
+        <Header />
+        {children}
+        <Toaster />
+
       </body>
     </html>
   )

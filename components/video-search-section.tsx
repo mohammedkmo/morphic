@@ -35,9 +35,11 @@ export function VideoSearchSection({
       showIcon={false}
     >
       {!isLoading && searchResults ? (
-        <Section title="Videos">
-          <VideoSearchResults results={searchResults} />
-        </Section>
+        +(
+          <Section title="فيديوهات">
+            <VideoSearchResults results={searchResults} />
+          </Section>
+        )
       ) : (
         <DefaultSkeleton />
       )}

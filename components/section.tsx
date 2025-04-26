@@ -32,7 +32,7 @@ export const Section: React.FC<SectionProps> = ({
   separator = false
 }) => {
   const iconSize = 16
-  const iconClassName = 'mr-1.5 text-muted-foreground'
+  const iconClassName = 'ml-1.5 text-muted-foreground'
   let icon: React.ReactNode
   switch (title) {
     case 'Images':
